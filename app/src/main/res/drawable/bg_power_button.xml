@@ -1,0 +1,13 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#4017291C">
+    <item>
+        <selector>
+            <item android:state_enabled="false">
+                <shape android:shape="oval"><solid android:color="@color/card_bg" /></shape>
+            </item>
+            <item>
+                <shape android:shape="oval"><solid android:color="@color/dpad_center" /></shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

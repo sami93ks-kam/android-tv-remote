@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="52dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="17dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/art_boar" />
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="43dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="21dp"
+            android:layout_marginBottom="12dp"
+            android:importantForAccessibility="no"
+            android:scaleX="-1"
+            android:src="@drawable/art_boar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="70dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brand"
+                android:textColor="@color/brand"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/tvPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/ScreenTitle"
+                    android:text="@string/tvs" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    style="@style/SecondaryText"
+                    android:layout_marginTop="8dp"
+                    android:accessibilityLiveRegion="polite" />
+
+                <LinearLayout
+                    android:id="@+id/tvRows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical" />
+
+                <Button
+                    android:id="@+id/btnRefresh"
+                    style="@style/QuietButton"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/search_again" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/remotePanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ScreenTitle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/remote_title" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnPower"
+                        style="@style/RemoteIconKey"
+                        android:layout_width="52dp"
+                        android:background="@drawable/bg_power_button"
+                        android:contentDescription="@string/power"
+                        app:srcCompat="@drawable/ic_remote_power" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/remoteTvName"
+                    style="@style/SecondaryText"
+                    android:layout_marginBottom="20dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/bg_dpad"
+                        app:layout_constraintDimensionRatio="H,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_max="244dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnUp"
+                            style="@style/DpadKey"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:contentDescription="@string/up"
+                            android:text="▲"
+                            app:layout_constraintWidth_percent="0.28"
+                            app:layout_constraintHeight_percent="0.28"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnLeft"
+                            style="@style/DpadKey"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:contentDescription="@string/left"
+                            android:text="◀"
+                            app:layout_constraintWidth_percent="0.28"
+                            app:layout_constraintHeight_percent="0.28"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnOk"
+                            style="@style/DpadCenterKey"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:text="@string/ok"
+                            app:layout_constraintWidth_percent="0.34"
+                            app:layout_constraintHeight_percent="0.34"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnRight"
+                            style="@style/DpadKey"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:contentDescription="@string/right"
+                            android:text="▶"
+                            app:layout_constraintWidth_percent="0.28"
+                            app:layout_constraintHeight_percent="0.28"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnDown"
+                            style="@style/DpadKey"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:contentDescription="@string/down"
+                            android:text="▼"
+                            app:layout_constraintWidth_percent="0.28"
+                            app:layout_constraintHeight_percent="0.28"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBack"
+                        style="@style/RemoteKey"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/back" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnHome"
+                        style="@style/RemoteIconKey"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/home"
+                        app:srcCompat="@drawable/ic_remote_home" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnVolUp"
+                        style="@style/RemoteKey"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/vol_up_description"
+                        android:text="@string/vol_up" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnMenu"
+                        style="@style/RemoteKey"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/menu" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnMute"
+                        style="@style/RemoteIconKey"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/mute"
+                        app:srcCompat="@drawable/ic_remote_mute" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnVolDown"
+                        style="@style/RemoteKey"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/vol_down_description"
+                        android:text="@string/vol_down" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/volumeUnavailable"
+                    style="@style/SecondaryText"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/volume_unavailable"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSources"
+                    style="@style/RemoteKey"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/sources" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnYouTube"
+                        style="@style/RemoteKey"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/youtube" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnNetflix"
+                        style="@style/RemoteKey"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/netflix" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnRemoteBluetooth"
+                        style="@style/QuietButton"
+                        android:text="@string/bt_setup" />
+
+                    <Button
+                        android:id="@+id/btnDisconnect"
+                        style="@style/QuietButton"
+                        android:text="@string/disconnect" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>
