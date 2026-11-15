@@ -1,0 +1,19 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#4017291C">
+    <item>
+        <selector>
+            <item android:state_enabled="false">
+                <shape>
+                    <solid android:color="@color/card_bg" />
+                    <corners android:radius="14dp" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/dpad_center" />
+                    <corners android:radius="14dp" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>
